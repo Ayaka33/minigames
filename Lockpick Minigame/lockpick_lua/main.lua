@@ -7,10 +7,10 @@ function love.load()
     degrees = 0
     new_degrees = 0
     time = 0
-    color = {1, 0, 0}  -- Red color for the needle
+    color = {1, 0, 0}  -- color for the needle
     txtcolor = {1, 1, 1}
     bgcolor = {64 / 255, 75 / 255, 88 / 255}
-    successColor = {0, 1, 0}  -- Green color for the success area
+    successColor = {0, 1, 0}  -- color for the success area
     streak = 0
     maxStreak = 0
     generateNewTarget()
@@ -74,7 +74,7 @@ end
 function drawNeedle()
     local radians = math.rad(degrees)
     love.graphics.setColor(color)
-    love.graphics.setLineWidth(6)  -- Thinner needle
+    love.graphics.setLineWidth(6)  -- needle size
     love.graphics.line(width / 2, height / 2, width / 2 + 100 * math.cos(radians - math.pi / 2), height / 2 + 100 * math.sin(radians - math.pi / 2))
 end
 
@@ -90,7 +90,7 @@ end
 function love.keypressed(key)
     local validKeys = {'1', '2', '3', '4'}
     if contains(validKeys, key) then
-        successColor = {0, 1, 0}  -- Ensure success color is green
+        successColor = {0, 1, 0}  -- success color is green
         if key == tostring(targetKey) then
             local d_start = math.deg(g_start)
             local d_end = math.deg(g_end)
@@ -136,9 +136,9 @@ function generateNewTarget()
     degrees = 0
     new_degrees = 360
     targetKey = love.math.random(1, 4)
-    time = love.math.random(1, 4)  -- Reduce the minimum and maximum time
-    g_start = love.math.random() * 2 * math.pi  -- Random start angle between 0 and 2*pi
-    local segmentWidth = love.math.random(30, 60)  -- Random segment width between 30 and 60 degrees
+    time = love.math.random(1, 4)  -- minimum and maximum time
+    g_start = love.math.random() * 2 * math.pi  -- Random start angle 
+    local segmentWidth = love.math.random(30, 60)  -- Random segment width
     g_end = g_start + math.rad(segmentWidth)
     correct = false
 end

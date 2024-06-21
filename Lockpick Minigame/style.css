@@ -1,0 +1,46 @@
+body {
+    background-color: #0d1117;
+}
+
+#canvas {
+    display: block;
+    margin: 50px auto;
+    width: 250px;
+    height: 250px;
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    margin: 20px auto;
+    background-color: #1f6feb;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease;
+}
+
+.stats.wrong {
+    background-color: #d73a49;
+}
+
+.stats .text {
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #c9d1d9;
+    margin-bottom: 5px;
+}
+
+.stats .value {
+    text-align: center;
+    font-size: 36px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+}
